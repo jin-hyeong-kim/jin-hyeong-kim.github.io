@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Jinhyeong Kim - Personal Website</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>[Your Name]</h1>
+        <nav>
+            <a href="index.html">Home</a> |
+            <a href="projects.html">Projects</a> |
+            <a href="cv.pdf">CV</a>
+        </nav>
+    </header>
+
+    <section id="intro">
+        <h2>Introduction</h2>
+        <p>
+            I am a graduate student (M.S. candidate) in Department of Electrical Engineering, KAIST.
+            I am highly motivated to bridge machine learning and real-world engineering problems, especially by introducing carefully devised algorithms to optimize complex systems.
+            To this end, I have worked on applying Bayesian methods for high-dimensional optimization to design for complex devices such as OLEDs with free-form lens structures.
+            I also have strong background on (organic) electronics and material science, and experiences in OLED fabrication.
+        </p>
+        <p>
+            I completed my B.S. degree in Department of Material Science & Engineering, KAIST.
+            I am currently pursuing a M.S. degree under the supervision of Prof. Seunghyeup Yoo (EE, KAIST) and expect to graduate in Feb, 2026.
+        </p>
+    </section>
+
+    <section id="projects">
+        <h2>Projects</h2>
+        <ul>
+            <li><a href="projects.html#project1">Optimization of Complex Systems</a></li>
+            <li><a href="projects.html#project2">Phototherapeutic Device Engineering</a></li>
+        </ul>
+    </section>
+</body>
+</html>
