@@ -1,3 +1,11 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Jinhyeong Kim - Personal Website</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
 <section id="project1">
     <h2>Optimization of Complex Systems</h2>
     <p>
@@ -11,54 +19,13 @@
 
     <h3>Sub-Projects</h3>
     <ul>
-        <li><a href="#p1a">Multi-objective Optimization Tool for Light Outcoupling Enhancement in OLEDs</a></li>
-        <li><a href="#p1b">Bayesian Optimization for OLED Engineering</a></li>
-        <li><a href="#p1c">k-NN-based Surrogate Model for Black-box Constrained Bayesian Optimization</a></li>
-        <li><a href="#p1d">Transformer-based Model for Prediction of Geometry Generation Failure in LightTools</a></li>
-        <li><a href="#p1e">Largely Fabricable Paraboloidal Lens for High-directional OLEDs</a></li>
+        <li><a href="./projects/optimization.html">Multi-objective Optimization Tool for Light Outcoupling Enhancement in OLEDs</a></li>
+        <li><a href="./projects/optimization.html">Bayesian Optimization for OLED Engineering</a></li>
+        <li><a href="./projects/optimization.html">k-NN-based Surrogate Model for Black-box Constrained Bayesian Optimization</a></li>
+        <li><a href="./projects/optimization.html">Transformer-based Model for Prediction of Geometry Generation Failure in LightTools</a></li>
+        <li><a href="./projects/optimization.html">Largely Fabricable Paraboloidal Lens for High-directional OLEDs</a></li>
     </ul>
 
-    <section id="p1a">
-        <h4>Multi-objective Optimization Tool for Light Outcoupling Enhancement in OLEDs</h4>
-        <p>
-            MLA (Micro-lens Arrays) are one of the most common methods used to enhance OLED efficiency due to their effectiveness and planar integrity.
-            Although hemisphere is the conventional choice for the unit lens structure, it is actually a sub-optimal solution.
-            Running accurate optical simulations within a well-designed optimization framework can give the global optimum given the emission material.
-            (picture of system)
-            Here, the optimization of one or more desired OLED characteristics are defined as a 12-dimensional optimization problem.
-            The problem was solved by algorithms based on GA (genetic algorithm) which returns the optimal lens structure and layer thicknesses.
-            As a single-objective instance, EQE (external quantum efficiency) was maximized up to 62.7%. (+3% compared to hemispherical MLAs)
-            (EQE figure)
-            The GA-based algorithm was slightly modified to be able to optimize multiple objectives at once.
-            Pareto solution-based methods and penalty function-based algorithms were developed separately to serve this purpose.
-        </p>
-    </section>
-
-    <section id="p1b">
-        <h4>Bayesian Optimization for OLED Engineering</h4>
-        <p>
-            Bayesian optimization which benefits by the use of ~~ is a fitting choice for optimizing complex systems such as the OLED+MLA mentioned in ''.
-            Optimization framework for OLED engineering based on Bayesian methods drastically reduces computational cost required for optical simulations while maintaining high accuracy.
-            Specific aspects of the OLED engineering problem had to be addressed for this framework to function properly and efficiently. (See '')
-            CE (current efficiency) was maximized up to ~~
-            The fabication of corresponding lens structure can be done utilizing a high-resolution printing techinque (2-photon polymerization).
-        </p>
-    </section>
-
-    <section id="p1c">
-        <h4>k-NN-based Surrogate Model for Black-box Constrained Bayesian Optimization</h4>
-        <p>
-            
-        </p>
-    </section>
-
-    <section id="p1d">
-        <h4>Transformer-based Model for Prediction of Geometry Generation Failure in LightTools</h4>
-        <p>Explain this sub-project here…</p>
-    </section>
-
-    <section id="p1e">
-        <h4>Largely Fabricable Paraboloidal Lens for High-directional OLEDs</h4>
-        <p>Explain this sub-project here…</p>
-    </section>
 </section>
+</body>
+</html>
