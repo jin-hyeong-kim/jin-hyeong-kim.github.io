@@ -21,11 +21,11 @@
             MLA (Micro-lens Arrays) are one of the most common methods used to enhance OLED efficiency due to their effectiveness and planar integrity. <br/>
             Although hemisphere is the conventional choice for the unit lens structure, it is actually a sub-optimal solution. <br/>
             Running accurate optical simulations within a well-designed optimization framework can give the global optimum given the emission material. <br/>
-            <img src="./images/fig1_optimization_problem.jpg" alt="Optimization Space" width="400">
+            <img src="./images/fig1_optimization_problem.jpg" alt="Optimization Space" class='left-img' width="400">
             Here, the optimization of one or more desired OLED characteristics are defined as a 12-dimensional optimization problem. <br/>
             The problem was solved by algorithms based on GA (genetic algorithm) which returns the optimal lens structure and layer thicknesses. <br/>
             As a single-objective instance, EQE (external quantum efficiency) was maximized up to 62.7%. (+3% compared to hemispherical MLAs) <br/>
-            <img src="./images/fig2_EQE.jpg" alt="Transmitted power vs. angle for optimized lens structure and hemispherical lens" width="400">
+            <img src="./images/fig2_EQE.jpg" alt="Transmitted power vs. angle for optimized lens structure and hemispherical lens" class='left-img' width="400">
             The GA-based algorithm was slightly modified to be able to optimize multiple objectives at once. <br/>
             Pareto solution-based methods and penalty function-based algorithms were developed separately to serve this purpose. <br/>
         </p>
@@ -34,7 +34,7 @@
     <section id="p1b">
         <h4>Bayesian Optimization for OLED Engineering</h4>
         <p>
-            Bayesian optimization which benefits by the use of ~~ is a fitting choice for optimizing complex systems such as the OLED+MLA mentioned in ''. <br/>
+            Bayesian optimization which benefits by the use of ~~ is a fitting choice for optimizing complex systems such as the OLED+MLA mentioned in 'Multi-objective Optimization Tool for Light Outcoupling Enhancement in OLEDs'. <br/>
             Optimization framework for OLED engineering based on Bayesian methods drastically reduces computational cost required for optical simulations while maintaining high accuracy. <br/>
             Specific aspects of the OLED engineering problem had to be addressed for this framework to function properly and efficiently. (See '') <br/>
             CE (current efficiency) was maximized up to ~~ <br/>
