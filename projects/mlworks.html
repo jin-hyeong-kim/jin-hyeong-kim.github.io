@@ -70,27 +70,17 @@
                 or failure for spline generation in the optical design software. The baseline model—a
                 hyperparameter-tuned transformer—achieved <strong>95% accuracy</strong>, but further
                 improvement was limited even with ensemble techniques such as boosting due to two key challenges:
+                i. severe class imbalance, and ii. dominance of a single feature.
             </p>
-            <ul>
-                <li>Severe class imbalance</li>
-                <li>Dominance of a single input feature</li>
-            </ul>
             <p>
                 To address these issues, I designed a <strong>Mixture-of-Experts (MoE) architecture</strong>
                 with specialized experts that focus on rare, counterintuitive cases. The experts were
                 trained with <strong>targeted sampling strategies</strong> to emphasize minority classes
                 and hard examples, allowing the model to capture more nuanced patterns in the data rather
-                than overfitting to the dominant intersection cue.
+                than overfitting to the dominant feature.
             </p>
             <p>
-                The resulting MoE classifier achieved:
-            </p>
-            <ul>
-                <li><strong>98.5&nbsp;% accuracy</strong></li>
-                <li><strong>0.80 F1 score</strong></li>
-                <li><strong>0.98 AUC</strong></li>
-            </ul>
-            <p>
+                The resulting MoE classifier achieved: <strong>98.5% accuracy</strong>, <strong>0.80 F1 score</strong>, <strong>0.98 AUC</strong>
                 This outperforms the baseline transformer (95% accuracy, 0.75 F1, 0.97 AUC)
                 by substantially improving performance on minority and difficult cases.
             </p>
