@@ -110,3 +110,13 @@ figcaption {
     margin-left: 0 !important;
     padding-left: 0 !important;
 }
+
+.back-link a {
+    color: #007acc;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.back-link a:hover {
+    text-decoration: underline;
+}
