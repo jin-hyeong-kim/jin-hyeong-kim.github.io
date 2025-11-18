@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>Optimization of Complex Systems – Jinhyeong Kim</title>
+    <title>Optimization of Complex Systems - Jinhyeong Kim</title>
     <link rel="stylesheet" href="../style.css">
 </head>
 <body>
@@ -28,14 +28,12 @@
             <p>
                 Micro-lens arrays (MLAs) are widely used to enhance OLED light outcoupling due to their
                 effectiveness and planar compatibility. Although hemispherical lenses are a conventional
-                choice for MLA unit structures, they are often <strong>sub-optimal</strong> when the full
-                design space is considered.
+                choice for MLA unit structures, they are often sub-optimal when the full design space is considered.
                 <br><br>
                 In this work, I formulate the MLA design problem as a high-dimensional
                 Bayesian optimization task. The unit lens shape and key geometric parameters are
                 parameterized in a 12-dimensional design space, and optical simulations are used to evaluate device performance 
-                (e.g., external quantum efficiency and angular emission profiles). The goal is to identify MLA designs 
-                that significantly outperform the hemispherical baseline while respecting fabrication and physical constraints.
+                The goal is to identify MLA designs that significantly outperform the hemispherical baseline.
             </p>
             <figure>
                 <img src="./images/fig1_optimization_problem.jpg"
@@ -60,7 +58,7 @@
         <section id="p1b" class="project-section">
             <h3>Multi-objective Optimization Tool for Light Outcoupling Enhancement in OLEDs</h3>
             <p>
-                Prior to the work above, I developed a genetic-algorithm (GA)-based
+                Prior to the work above, I developed a genetic-algorithm(GA)-based
                 optimization tool to design OLED structures with enhanced light outcoupling.
                 The algorithm jointly optimizes the MLA geometry and layer thicknesses in the device stack.
                 <br><br>
@@ -81,9 +79,8 @@
             <p>
                 The GA framework was further extended to handle multi-objective optimization,
                 enabling simultaneous improvement of multiple performance metrics (e.g., EQE, angular
-                uniformity, or viewing-angle constraints). I implemented both
-                Pareto front-based methods and penalty function-based algorithms to generate trade-off solutions across conflicting objectives, providing
-                designers with a spectrum of high-quality device configurations rather than a single point optimum.
+                uniformity, or viewing-angle constraints). I implemented Pareto front-based methods and penalty function-based algorithms
+                to generate trade-off solutions across conflicting objectives rather than a single point optimum.
             </p>
         </section>
     </main>
