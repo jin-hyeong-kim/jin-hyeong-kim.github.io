@@ -102,3 +102,28 @@ figcaption {
     margin-top: 5px;
     text-align: center;  /* ensure caption is below */
 }
+
+/* Stylish list */
+.list {
+    list-style: none;
+    padding-left: 0;
+    margin-top: 1rem;
+}
+
+.list li {
+    margin: 0.4rem 0;
+    padding-left: 1.8rem;
+    position: relative;
+    font-size: 1rem;
+}
+
+/* Bullet icon */
+.list li::before {
+    content: "▹"; /* small arrow/triangle marker */
+    position: absolute;
+    left: 0;
+    color: #4F8EF7; /* nice academic blue */
+    font-size: 1.2rem;
+    line-height: 1;
+    top: 0.1rem;
+}
