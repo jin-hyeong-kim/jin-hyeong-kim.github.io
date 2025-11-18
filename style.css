@@ -70,8 +70,9 @@ section {
 
 /* List styling */
 ul {
-    list-style-type: square;
-    margin-left: 0px;
+    list-style-position: inside;  /* makes bullets sit inside the text box */
+    margin-left: 0;
+    padding-left: 0;
 }
 
 /* Footer (optional, if you add one later) */
@@ -101,30 +102,4 @@ figcaption {
     color: #555;
     margin-top: 5px;
     text-align: center;  /* ensure caption is below */
-}
-
-/* Stylish list */
-.list {
-    list-style: none;
-    padding-left: 0;
-    margin-left: 0;
-    margin-top: 1rem;
-}
-
-.list li {
-    margin: 0.4rem 0;
-    padding-left: 1.4rem;   /* ← Creates space for the bullet */
-    font-size: 1rem;
-    position: relative;
-}
-
-/* Bullet icon */
-.list li::before {
-    content: "▹"; /* small arrow/triangle marker */
-    position: absolute;
-    left: 0;
-    color: #4F8EF7; /* nice academic blue */
-    font-size: 1.2rem;
-    line-height: 1;
-    top: 0.1rem;
 }
