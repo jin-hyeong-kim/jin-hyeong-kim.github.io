@@ -111,10 +111,10 @@ figcaption {
 }
 
 .list li {
-    margin: 0;
-    padding-left: 0;
+    margin: 0.4rem 0;
+    padding-left: 1.4rem;   /* ← Creates space for the bullet */
     font-size: 1rem;
-    position: relative;  /* ← REQUIRED */
+    position: relative;
 }
 
 /* Bullet icon */
