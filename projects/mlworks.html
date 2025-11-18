@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>ML Works - Jinhyeong Kim</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+    <main class="content">
+        <h2>ML Works</h2>
+
+        <p>
+            This page summarizes my work on machine learning for scientific design pipelines.
+            The main focus is on developing <strong>transformer-based mixture-of-experts (MoE) models</strong> that enhance
+            the reliability of optimization frameworks involving high-dimensional, simulation-driven design spaces.
+            <br><br>
+            I explore <strong>transformer-based architectures</strong>, <strong>sparsely-activated MoE models</strong>, and 
+            <strong>reinforcement-learning-style data curation</strong> to improve prediction accuracy, minority-class performance,
+            and computational efficiency in applications such as spline generation failure prediction for optical simulations.
+        </p>
+
+        <h3>Sub-Projects</h3>
+        <ul>
+            <li><a href="#ml1">Data-Curated, Sparsely-Activated MoE for Spline Failure Prediction</a></li>
+            <li><a href="#ml2">Transformer-based MoE Classifier for Simulation Gating</a></li>
+        </ul>
+
+        <!-- Project ML1 -->
+        <section id="ml1" class="project-section">
+            <h3>Data-Curated, Sparsely-Activated MoE for Spline Failure Prediction</h3>
+            <p>
+                Building on the transformer-based MoE classifier for simulation gating, this ongoing work
+                aims to design a <strong>data-curated, sparsely-activated MoE framework</strong> for
+                predicting spline generation failures in complex optical simulations. The goal is to
+                further improve accuracy, minority-class performance, and data-efficiency while reducing computational cost.
+            </p>
+            <p>
+                A key component of this project is the integration of 
+                <strong>reinforcement learning-based preference optimization</strong> into the data
+                pipeline. Instead of treating all training samples as equally informative, a “data curator”
+                learns to select or weight samples and batches that are expected to yield
+                the greatest performance gains—especially on rare or counterintuitive failure cases. 
+                This preference-based curation is designed to:
+            </p>
+            <ul>
+                <li>prioritize informative and diverse samples over redundant ones,</li>
+                <li>emphasize minority-class and hard-to-predict examples, and</li>
+                <li>stabilize training under severe class imbalance.</li>
+            </ul>
+            <p>
+                In parallel, I am developing a <strong>sparsely-activated MoE architecture</strong>, where
+                only a subset of experts is activated per input. This reduces inference and training cost
+                while preserving (or improving) representational capacity, enabling the model to scale to
+                larger datasets and more complex design spaces without a proportional increase in
+                computational burden.
+            </p>
+            <p>
+                Together, these components aim to provide a <strong>computationally efficient, 
+                data-aware MoE system</strong> that can be tightly integrated with simulation-driven
+                optimization frameworks for robust, high-throughput design exploration.
+            </p>
+        </section>
+
+        <!-- Project ML2 -->
+        <section id="ml2" class="project-section">
+            <h3>Transformer-based MoE Classifier for Simulation Gating</h3>
+            <p>
+                To complement the optimization framework for OLED micro-lens array (MLA) design, I
+                developed a <strong>transformer-based classifier</strong> that predicts simulation success
+                or failure for spline generation in the optical design software. The baseline model—a
+                hyperparameter-tuned transformer—achieved <strong>95% accuracy</strong>, but further
+                improvement was limited even with ensemble techniques such as boosting due to two key challenges:
+            </p>
+            <ul>
+                <li>Severe class imbalance</li>
+                <li>Dominance of a single input feature</li>
+            </ul>
+            <p>
+                To address these issues, I designed a <strong>Mixture-of-Experts (MoE) architecture</strong>
+                with specialized experts that focus on rare, counterintuitive cases. The experts were
+                trained with <strong>targeted sampling strategies</strong> to emphasize minority classes
+                and hard examples, allowing the model to capture more nuanced patterns in the data rather
+                than overfitting to the dominant intersection cue.
+            </p>
+            <p>
+                The resulting MoE classifier achieved:
+            </p>
+            <ul>
+                <li><strong>98.5&nbsp;% accuracy</strong></li>
+                <li><strong>0.80 F1 score</strong></li>
+                <li><strong>0.98 AUC</strong></li>
+            </ul>
+            <p>
+                This outperforms the baseline transformer (95% accuracy, 0.75 F1, 0.97 AUC)
+                by substantially improving performance on minority and difficult cases.
+            </p>
+            <p>
+                This project forms the foundation for my ongoing work on 
+                <strong>data-curated, sparsely-activated MoE models</strong> and 
+                <strong>RL-based preference optimization</strong>, which aim to further enhance accuracy,
+                robustness, and data-efficiency in simulation-aware machine learning systems.
+            </p>
+        </section>
+    </main>
+</body>
+</html>

@@ -2,91 +2,90 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>Jinhyeong Kim - Personal Website</title>
+    <title>Optimization of Complex Systems – Jinhyeong Kim</title>
     <link rel="stylesheet" href="../style.css">
 </head>
 <body>
-    <h2>Optimization of Complex Systems</h2>
-    <h3>Sub-Projects</h3>
-    <ul>
-        <li><a href="#p1a">Multi-objective Optimization Tool for Light Outcoupling Enhancement in OLEDs</a></li>
-        <li><a href="#p1b">Bayesian Optimization for OLED Engineering</a></li>
-        <li><a href="#p1c">k-NN-based Surrogate Model for Black-box Constrained Bayesian Optimization</a></li>
-        <li><a href="#p1d">Transformer-based Model for Prediction of Geometry Generation Failure in LightTools</a></li>
-        <li><a href="#p1e">Largely Fabricable Paraboloidal Lens for High-directional OLEDs</a></li>
-    </ul>
+    <main class="content">
+        <h2>Optimization of Complex Systems</h2>
 
-    <section id="p1a">
-        <h4>Multi-objective Optimization Tool for Light Outcoupling Enhancement in OLEDs</h4>
         <p>
-            MLA (Micro-lens Arrays) are one of the most common methods used to enhance OLED efficiency due to their effectiveness and planar integrity.
-            Although hemisphere is the conventional choice for the unit lens structure, it is actually a sub-optimal solution. <br/>
-            Running accurate optical simulations within a well-designed optimization framework can give the global optimum given the emission material for an OLED. <br/>
+            This page describes my work on optimization of complex electronic and photonic systems,
+            with a focus on <strong>OLED micro-lens arrays (MLAs)</strong> for light outcoupling enhancement.
+            The design spaces involved are high-dimensional and expensive to evaluate, motivating the use
+            of <strong>Bayesian optimization</strong> to search for globally optimal device structures.
+        </p>
+
+        <h3>Sub-Projects</h3>
+        <ul>
+            <li><a href="#p1a">Failure-Aware Bayesian Optimization for OLED-MLA Design</a></li>
+            <li><a href="#p1b">Multi-objective Optimization Tool for Light Outcoupling Enhancement in OLEDs</a></li>
+        </ul>
+
+        <!-- Project 1A -->
+        <section id="p1a" class="project-section">
+            <h3>Failure-Aware Bayesian Optimization for OLED-MLA Design</h3>
+            <p>
+                Micro-lens arrays (MLAs) are widely used to enhance OLED light outcoupling due to their
+                effectiveness and planar compatibility. Although hemispherical lenses are a conventional
+                choice for MLA unit structures, they are often <strong>sub-optimal</strong> when the full
+                design space is considered.
+                <br><br>
+                In this work, I formulate the MLA design problem as a high-dimensional
+                Bayesian optimization task. The unit lens shape and key geometric parameters are
+                parameterized in a 12-dimensional design space, and optical simulations are used to evaluate device performance 
+                (e.g., external quantum efficiency and angular emission profiles). The goal is to identify MLA designs 
+                that significantly outperform the hemispherical baseline while respecting fabrication and physical constraints.
+            </p>
             <figure>
-                <img src="./images/fig1_optimization_problem.jpg" alt="Fig. Optimization variables" width="400">
-                <figcaption>Optimization Variables</figcaption>
+                <img src="./images/fig1_optimization_problem.jpg"
+                     alt="Illustration of optimization variables for the MLA design problem"
+                     width="400">
+                <figcaption>Design variables for the OLED-MLA optimization problem.</figcaption>
             </figure>
-            Here, the optimization of one or more OLED characteristics are defined in a 12-dimensional design space. <br/>
-            Primarily, GA (genetic algorithm) was applied to obtain the optimal lens structure and layer thicknesses. <br/>
-            As a single-objective instance, EQE (external quantum efficiency) was maximized up to 62.7%. (+3% compared to hemispherical MLAs) <br/>
+            <p>
+                To handle simulation failures and invalid geometries, I employ a
+                <strong>failure-aware optimization framework</strong> that explicitly accounts for
+                spline-generation failures in the optical design software. This allows the optimizer to
+                focus evaluations on valid and promising regions of the design space, improving data-efficiency
+                and robustness of the search.
+            </p>
+            <p>
+                Using this framework, an OLED-MLA structure that achieves <strong>28% enhancement</strong> in current efficiency
+                compared to conventional hemispherical MLAs were discovered.
+            </p>
+        </section>
+
+        <!-- Project 1B -->
+        <section id="p1b" class="project-section">
+            <h3>Multi-objective Optimization Tool for Light Outcoupling Enhancement in OLEDs</h3>
+            <p>
+                Prior to the work above, I developed a genetic-algorithm (GA)-based
+                optimization tool to design OLED structures with enhanced light outcoupling.
+                The algorithm jointly optimizes the MLA geometry and layer thicknesses in the device stack.
+                <br><br>
+                As a single-objective instance, the external quantum efficiency (EQE) was maximized and
+                achieved up to 62.7%, approximately <strong>+3%</strong> improvement compared to conventional hemispherical MLAs.
+            </p>
+
             <figure>
-                <img src="./images/fig2_EQE.jpg" alt="Fig. Transmitted power vs. angle for optimized lens structure and hemispherical lens" width="400">
-                <figcaption>Transmitted power vs. angle for optimized lens structure and hemispherical lens</figcaption>
+                <img src="./images/fig2_EQE.jpg"
+                     alt="Transmitted power vs. angle for optimized lens structure and hemispherical lens"
+                     width="400">
+                <figcaption>
+                    Transmitted power versus viewing angle for the optimized lens structure compared
+                    to a hemispherical lens.
+                </figcaption>
             </figure>
-            GA was slightly modified to be able to optimize multiple objectives at once. <br/>
-            Pareto solution-based methods and penalty function-based algorithms were developed separately to serve this purpose. <br/>
-        </p>
-    </section>
 
-    <section id="p1b">
-        <h4>Bayesian Optimization for OLED Engineering</h4>
-        <p>
-            Optimizing complex systems such as the OLED+MLA often require more efficient methods than evolutionary algorithms. <br/>
-            To achieve better optimization efficiency, Bayesian methods were applied to the high-dimensional optimization problem for designing OLEDs with free-form lens structures.
-            Bayesian optimization enables efficient exploration of complex, high-dimensional design space where traditional methods are costly or ineffective. <br/>
-            Specific aspects of the OLED engineering problem had to be addressed for this framework to function properly and efficiently. (See <a href="./optimization.html#plc">k-NN-based Surrogate Model for Black-box Constrained Bayesian Optimization</a> for details) <br/>
-            CE (current efficiency) was maximized up to +12% of hemispherical MLAs using this framework.
-            The fabication of corresponding lens structure can be done utilizing a high-resolution printing techinque (2-photon polymerization)(2PP). <br/>
-            <figure>
-                <img src="./images/fig3_lensSEMimage.jpg" alt="Fig. SEM image of printed lens unit by 2PP" width="300">
-                <figcaption>SEM image of printed lens unit by 2PP (collaborative work with OSML, SNU)</figcaption>
-            </figure>
-        </p>
-    </section>
-
-    <section id="p1c">
-        <h4>k-NN-based Surrogate Model for Black-box Constrained Bayesian Optimization</h4>
-        <p>
-            One of the defined problem's features is that the failing conditions for inputs are not clearly known. 
-            This is due to the underlying black-box geometric constraints within the Monte Carlo method-based optic simulation program LightTools<sup>TM</sup>.
-            As a result, even input parameters that satisfy preliminary feasibility checks may fail during simulation, returning invalid outcomes. 
-            This characteristic situates the problem as a black-box constrained optimization, where the objective is an expensive-to-evaluate black-box function and the constraints are analytically intractable. <br/>
-            To address this challenge, a k-NN-based surrogate model was developed and tailored for such settings.
-            The surrogate not only approximates the objective but also accounts for uncertainty in feasibility by learning directly from observed outcomes.
-            A warm-start initialization with well-distributed samples is employed to stabilize the surrogate training and ensure broad coverage of the design space during early optimization.
-            By integrating these elements, this framework achieves efficient exploration while maintaining robustness against unknown and probabilistic constraint violations. <br/>
-        </p>
-    </section>
-
-    <section id="p1d">
-        <h4>Transformer-based Model for Prediction of Geometry Generation Failure in LightTools<sup>TM</sup></h4>
-        <p>
-            To provide an alternative way to address black-box geometric failure during the optical simulation process, a transformer-based machine learning model was developed.
-            The model predicts when geometry generation in LightTools<sup>TM</sup> will fail, given a set of input coordinates, achieving over 95% accuracy, enabling the optimization algorithm to focus computational resources on feasible designs.
-            Model accuracy is continuously being enhanced through feature engineering, hyperparameter optimization, and systematic evaluation of transformer architectures.
-            The incorporation of this predictive model not only accelerates Bayesian optimization for OLED engineering but also improves the robustness of simulation-driven design pipelines. <br/>
-        </p>
-    </section>
-
-    <section id="p1e">
-        <h4>Largely Fabricable Paraboloidal Lens for High-directional OLEDs</h4>
-        <p>
-            Optimized lens structure in the works regarding OLEDs can be hard and costly to fabricate for intricate unit lens structures.
-            For better fabricability, the Bayesian optimization framework was used to optimize unit lens structure in the design space of paraboloidal shapes.
-            Optimized paraboloidal lens can show improvement in directionality compared to hemispherical MLAs. (objective function set as power transmitted within certain angle from the normal direction)
-            The corresponding lens can be easily fabricated in large-scale using 3D diffusion lithography. <br/>
-        </p>
-    </section>
-</section>
+            <p>
+                The GA framework was further extended to handle multi-objective optimization,
+                enabling simultaneous improvement of multiple performance metrics (e.g., EQE, angular
+                uniformity, or viewing-angle constraints). I implemented both
+                Pareto front-based methods and penalty function-based algorithms to generate trade-off solutions across conflicting objectives, providing
+                designers with a spectrum of high-quality device configurations rather than a single point optimum.
+            </p>
+        </section>
+    </main>
 </body>
 </html>
