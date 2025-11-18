@@ -103,3 +103,10 @@ figcaption {
     margin-top: 5px;
     text-align: center;  /* ensure caption is below */
 }
+
+#index-page ul {
+    list-style-type: square;
+    list-style-position: inside;
+    margin-left: 0 !important;
+    padding-left: 0 !important;
+}
